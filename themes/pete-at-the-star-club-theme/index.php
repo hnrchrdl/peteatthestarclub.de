@@ -14,43 +14,125 @@
 
 get_header();
 ?>
+	<div class="grid_8" id="blog">
+		<?php include('blog.php'); ?>
+	</div>
+	<div class="grid_4">
 
-	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+	<div class="logo" style="margin-bottom:60px; margin-top:60px;">
+	<img src="./pete_files/logo.png" alt="Logo">
+	</div>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+	<div id="social">
 
-			endwhile;
+	<ul>
+	<li><a href="https://www.facebook.com/pages/Pete-At-The-Starclub/116829165140244" target="_blank"><img src="./pete_files/icon_facebook.png" alt="Facebook" width="48" height="48" title="Facebook"></a></li>
+	<li><a href="https://twitter.com/petestardust" target="_blank"><img src="./pete_files/icon_twitter.png" alt="Twitter" width="48" height="48" title="Twitter"></a></li>
+	<li><a href="https://soundcloud.com/peteatthestarclub/" target="_blank"><img src="./pete_files/icon_soundcloud.png" alt="Soundcloud" width="48" height="48" title="Soundcloud"></a></li>
+	<li><a href="https://peteatthestarclub.bandcamp.com/" target="_blank"><img src="./pete_files/icon_bandcamp.png" alt="Bandcamp" width="48" height="48" title="Bandcamp"></a></li>
+	<li class="end"><a href="http://www.lastfm.de/music/Pete+at+the+Starclub" target="_blank"><img src="./pete_files/icon_lastfm.png" alt="Last FM" width="48" height="48" title="Last FM"></a></li>
+	</ul>
 
-			the_posts_navigation();
+	</div>
 
-		else :
+	<div class="box">
+	<iframe style="border: 0; width: 100%; height: 42px;" src="./pete_files/saved_resource.html" seamless=""><a href="http://peteatthestarclub.bandcamp.com/album/error-lp">Error LP by pete at the starclub</a></iframe>
+	</div>
 
-			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+	<div class="box">
+	<iframe width="300" height="169" src="./pete_files/gaI8-dOb3o8.html" frameborder="0" allowfullscreen=""></iframe>
+	</div>
 
-	</main><!-- #main -->
+	<div class="box">
+	<h1>Konzerte &amp; Festivals</h1>
+
+	<div style="margin:0; padding:0;">
+	<div><iframe name="easyXDM_4340791_5554_provider" id="easyXDM_4340791_5554_provider" class="songkick-widget" src="./pete_files/songkick-widget.html" frameborder="0" style="width: 100%; height: 113px;"></iframe></div>
+	<script type="text/javascript" async="" src="./pete_files/ga.js"></script><script src="./pete_files/widget.js"></script>
+	</div>
+
+	<p>Weitere Konzerte oder Festivals folgen.</p>
+
+	</div>
+
+
+	<div class="box">
+	<h1>Bandinfo Download</h1>
+	<p>Pete At The Starclub ist ein Post-Punk-Quintett aus Hamburg. Gegründet 2001, gemacht für die Ewigkeit.</p>
+	<p>Weitere Bandinfos zum <a href="http://www.peteatthestarclub.de/download/Presskit.zip" target="_blank" title="Presskit Download">Download</a></p>
+	</div>
+
+
+<div class="clear"></div>
+
+
+<div>
+<h1>Kontakt &amp; Booking</h1>
+
+<table width="300" border="0" cellspacing="0"><tbody><tr><td>pete at the starclub<br>
+	c/o Christian Klindworth  <table width="300" border="0" cellspacing="0">
+  <tbody><tr></tr>
+  <tr>
+    <td>E-Mail</td>
+    <td>chrischi_stardust@gmx.de</td>
+  </tr>
+  <tr>
+    <td>Tel.</td>
+    <td>040.50030034</td>
+  </tr>
+  <tr>
+    <td>Mobil</td>
+    <td>0152.23058620</td>
+  </tr>
+</tbody></table></td>
+  </tr>
+</tbody></table>
+</div>
+
+
+<div class="box">
+<h1>Bildmaterial</h1>
+<p><img src="./pete_files/bandfoto_pats_tillpetersen.jpg" alt="Pete At The Starclub © Till Petersen" width="300" height="200"></p>
+<p>Weitere Bilder zum <a href="http://www.peteatthestarclub.de/download/Presskit.zip" target="_blank" title="Presskit Download">Download</a></p>
+</div>
+
+
+</div>  
+  <div class="clear"></div>
+
+
+<div class="grid_12" style="padding-top:20px;">
+
+<p style="text-align:center;"><a href="http://peteatthestarclub.de/impressum.html">Impressum</a></p>
+
+</div>
+<!-- end .grid_12 -->
+<div class="clear"></div>
+
+ 
+</div>
+<!-- end .container_12 -->
+
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36385486-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- GOOGLE ANALYTICS -->
+
 
 <?php
 get_sidebar();
