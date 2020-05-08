@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,12 +12,14 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		impressum
-	</footer><!-- #colophon -->
+
+<p style="text-align:center;"><a href="/impressum.html">Impressum</a></p>
+
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

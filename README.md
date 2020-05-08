@@ -13,4 +13,6 @@
 docker-compose up
 ```
 
+go to localhost:8000, or localhost:8000/wp-admin for the wordpress admin
+
 ## Deployment

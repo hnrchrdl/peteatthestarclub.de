@@ -1,4 +1,5 @@
 <?php
+
 /**
  * peteatthestarclub functions and definitions
  *
@@ -7,12 +8,12 @@
  * @package peteatthestarclub
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define('_S_VERSION', '1.0.0');
 }
 
-if ( ! function_exists( 'pete_at_the_star_club_theme_setup' ) ) :
+if (!function_exists('pete_at_the_star_club_theme_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,7 +21,8 @@ if ( ! function_exists( 'pete_at_the_star_club_theme_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function pete_at_the_star_club_theme_setup() {
+	function pete_at_the_star_club_theme_setup()
+	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -38,7 +40,7 @@ if ( ! function_exists( 'pete_at_the_star_club_theme_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		// add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -102,7 +104,9 @@ if ( ! function_exists( 'pete_at_the_star_club_theme_setup' ) ) :
 		// );
 	}
 endif;
-// add_action( 'after_setup_theme', 'pete_at_the_star_club_theme_setup' );
+add_action('after_setup_theme', 'pete_at_the_star_club_theme_setup');
+
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,81 +115,184 @@ endif;
  *
  * @global int $content_width
  */
-// function pete_at_the_star_club_theme_content_width() {
-// 	// This variable is intended to be overruled from themes.
-// 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-// 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-// 	$GLOBALS['content_width'] = apply_filters( 'pete_at_the_star_club_theme_content_width', 640 );
-// }
-// add_action( 'after_setup_theme', 'pete_at_the_star_club_theme_content_width', 0 );
+function pete_at_the_star_club_theme_content_width()
+{
+	// 	// This variable is intended to be overruled from themes.
+	// 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	// 	$GLOBALS['content_width'] = apply_filters( 'pete_at_the_star_club_theme_content_width', 640 );
+}
+// add_action('after_setup_theme', 'pete_at_the_star_club_theme_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-// function pete_at_the_star_club_theme_widgets_init() {
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__( 'Sidebar', 'pete-at-the-star-club-theme' ),
-// 			'id'            => 'sidebar-1',
-// 			'description'   => esc_html__( 'Add widgets here.', 'pete-at-the-star-club-theme' ),
-// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</section>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-// }
-// add_action( 'widgets_init', 'pete_at_the_star_club_theme_widgets_init' );
+function pete_at_the_star_club_theme_widgets_init()
+{
+	// 	register_sidebar(
+	// 		array(
+	// 			'name'          => esc_html__( 'Sidebar', 'pete-at-the-star-club-theme' ),
+	// 			'id'            => 'sidebar-1',
+	// 			'description'   => esc_html__( 'Add widgets here.', 'pete-at-the-star-club-theme' ),
+	// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	// 			'after_widget'  => '</section>',
+	// 			'before_title'  => '<h2 class="widget-title">',
+	// 			'after_title'   => '</h2>',
+	// 		)
+	// 	);
+}
+// add_action('widgets_init', 'pete_at_the_star_club_theme_widgets_init');
+
+
 
 /**
  * Enqueue scripts and styles.
  */
-function pete_at_the_star_club_theme_scripts() {
-	wp_enqueue_style( 'pete-at-the-star-club-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style('pete-at-the-star-club-theme-style_reset', get_template_directory_uri() . '/css/reset.css', array(), _S_VERSION );
-	wp_enqueue_style('pete-at-the-star-club-theme-style_text', get_template_directory_uri() . '/css/text.css', array(), _S_VERSION );
-	wp_enqueue_style('pete-at-the-star-club-theme-style_style', get_template_directory_uri() . '/css/style.css', array(), _S_VERSION );
-	wp_enqueue_style('pete-at-the-star-club-theme-style_960', get_template_directory_uri() . '/css/960.css', array(), _S_VERSION );
-	wp_enqueue_style('pete-at-the-star-club-theme-style_fonts', get_template_directory_uri() . '/css/fonts.css', array(), _S_VERSION );
-	// wp_style_add_data( 'pete-at-the-star-club-theme-style', 'rtl', 'replace' );
+function pete_at_the_star_club_theme_scripts()
+{
+	// styles
+	wp_enqueue_style('pete-at-the-star-club-theme-style', get_stylesheet_uri(), array(), _S_VERSION);
+	wp_enqueue_style('pete-at-the-star-club-theme-style_reset', get_template_directory_uri() . '/css/reset.css', array(), _S_VERSION);
+	wp_enqueue_style('pete-at-the-star-club-theme-style_text', get_template_directory_uri() . '/css/text.css', array(), _S_VERSION);
+	wp_enqueue_style('pete-at-the-star-club-theme-style_style', get_template_directory_uri() . '/css/style.css', array(), _S_VERSION);
+	wp_enqueue_style('pete-at-the-star-club-theme-style_960', get_template_directory_uri() . '/css/960.css', array(), _S_VERSION);
+	wp_enqueue_style('pete-at-the-star-club-theme-style_fonts', get_template_directory_uri() . '/css/fonts.css', array(), _S_VERSION);
 
-	// wp_enqueue_script( 'pete-at-the-star-club-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	// wp_enqueue_script( 'pete-at-the-star-club-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	// 	wp_enqueue_script( 'comment-reply' );
-	// }
+	// scripts
+	wp_enqueue_script('pete-at-the-star-club-theme-widget', get_template_directory_uri() . '/js/widget.js', array(), _S_VERSION, true);
+	wp_enqueue_script('pete-at-the-star-club-theme-ga', get_template_directory_uri() . '/js/ga.js', array(), _S_VERSION, true);
 }
-add_action( 'wp_enqueue_scripts', 'pete_at_the_star_club_theme_scripts' );
+add_action('wp_enqueue_scripts', 'pete_at_the_star_club_theme_scripts');
 
 
 /**
- * Implement the Custom Header feature.
+ * Customize theme.
  */
-// require get_template_directory() . '/inc/custom-header.php';
+function pete_at_the_star_club_theme_customize_register($wp_customize)
+{
+	// background image
+	// $wp_customize->add_section('background_image');
+	// 
+	// $wp_customize->add_setting('bandinfo', array(
+	// 	'default'   => '#000000',
+	// 	'transport' => 'refresh',
+	// ));
+	/*
+	 * Failsafe is safe
+	 */
+	if (!isset($wp_customize)) {
+		return;
+	}
 
-/**
- * Custom template tags for this theme.
- */
-// require get_template_directory() . '/inc/template-tags.php';
+	// Sections
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-// require get_template_directory() . '/inc/template-functions.php';
+	/**
+	 * Add 'Bandinfo' Section.
+	 */
+	$wp_customize->add_section(
+		// $id
+		'pete_at_the_star_club_theme_section_bandinfo',
+		// $args
+		array(
+			'title'			=> __('Bandinfo', 'theme-slug'),
+			// 'description'	=> __( 'Some description for the options in the Home Top section', 'theme-slug' ),
+			'active_callback' => 'is_front_page',
+		)
+	);
 
-/**
- * Customizer additions.
- */
-// require get_template_directory() . '/inc/customizer.php';
+	/**
+	 * Add 'Kontakt' Section.
+	 */
+	$wp_customize->add_section(
+		// $id
+		'pete_at_the_star_club_theme_section_contact',
+		// $args
+		array(
+			'title'			=> __('Kontakt', 'theme-slug'),
+			// 'description'	=> __( 'Some description for the options in the Home Top section', 'theme-slug' ),
+			'active_callback' => 'is_front_page',
+		)
+	);
 
-/**
- * Load Jetpack compatibility file.
- */
-// if ( defined( 'JETPACK__VERSION' ) ) {
-// 	require get_template_directory() . '/inc/jetpack.php';
-// }
+	/**
+	 * Add 'Bildermaterial' Section.
+	 */
+	$wp_customize->add_section(
+		// $id
+		'pete_at_the_star_club_theme_section_press',
+		// $args
+		array(
+			'title'			=> __('Bildmaterial', 'theme-slug'),
+			// 'description'	=> __( 'Some description for the options in the Home Top section', 'theme-slug' ),
+			'active_callback' => 'is_front_page',
+		)
+	);
 
+	// Settings
+
+	/**
+	 * Add 'Bandinfo Title' Setting.
+	 */
+	$wp_customize->add_setting(
+		// $id
+		'pete_at_the_star_club_theme_section_bandinfo_title',
+		// $args
+		array(
+			'transport'		=> 'postMessage'
+		)
+	);
+
+	/**
+	 * Add 'Bandinfo Presskit' Setting.
+	 */
+	$wp_customize->add_setting(
+		// $id
+		'pete_at_the_star_club_theme_section_bandinfo_presskit',
+		// $args
+		array(
+			'sanitize_callback'	=> 'esc_url_raw',
+			'transport'		=> 'postMessage'
+		)
+	);
+
+	// controls
+
+	/**
+	 * Add 'Bandinfo Title' image upload Control.
+	 */
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			// $wp_customize object
+			$wp_customize,
+			// $id
+			'pete_at_the_star_club_theme_section_bandinfo_title',
+			// $args
+			array(
+				'settings'		=> 'pete_at_the_star_club_theme_section_bandinfo_title',
+				'section'		=> 'pete_at_the_star_club_theme_section_bandinfo',
+				'label'			=> __('Titel', 'theme-slug'),
+			)
+		)
+	);
+
+	/**
+	 * Add 'Presskit' image upload Control.
+	 */
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			// $wp_customize object
+			$wp_customize,
+			// $id
+			'pete_at_the_star_club_theme_section_bandinfo_presskit',
+			// $args
+			array(
+				'settings'		=> 'pete_at_the_star_club_theme_section_bandinfo_presskit',
+				'section'		=> 'pete_at_the_star_club_theme_section_bandinfo',
+				'label'			=> __('Presskit', 'theme-slug'),
+			)
+		)
+	);
+}
+// add_action('customize_register', 'pete_at_the_star_club_theme_customize_register');
