@@ -17,7 +17,7 @@
 
 get_header();
 ?>
-<main class="grid_8" id="blog">
+<main class="grid_8" id="main">
     <?php
     $page = get_page_by_title('page-impressum');
     $content = apply_filters('the_content', $page->post_content);

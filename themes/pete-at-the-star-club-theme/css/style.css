@@ -116,16 +116,17 @@ h2 {
 /* Blog
 --------------------------------------------------------------------------------*/
 
-#blog {
+#main {
   position: relative;
-  margin-top: 40px;
+  margin-top: 80px;
+  padding-right: 40px;
 }
 
-#blog .img-wrapper {
-  padding: 40px 80px;
+#main .img-wrapper {
+  padding-bottom: 80px;
   display: block;
 }
 
-#blog img {
+#main img {
   max-width: 100%;
 }

@@ -15,7 +15,7 @@
 
 get_header();
 ?>
-<main class="grid_8" id="blog">
+<main class="grid_8" id="main">
     <?php include('blog.php'); ?>
 </main>
 <aside class="grid_4">
