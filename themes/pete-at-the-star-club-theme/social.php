@@ -7,8 +7,8 @@
             </a>
         </li>
         <li>
-            <a href="https://twitter.com/petestardust" target="_blank">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/icon_twitter.png" alt="Twitter" width="48"
+            <a href="https://open.spotify.com/artist/42MhERvMSWmEwW5orYmCzV?si=8Gc-Bk5OSlCqwL9p_Q2Vzw" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/icon_spotify.png" alt="Twitter" width="48"
                     height="48" title="Twitter">
             </a>
         </li>
